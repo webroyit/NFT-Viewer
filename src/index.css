@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.primary-bg-color{
+  background-color: #97b939;
+}
+
+.secondary-color {
+  color: #320e75;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.chain-icon {
+  position: absolute;
+  width: 40px;
+  top: 5px;
+  right: 5px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.chain-icon-sm {
+  width: 12px;
+  margin-right: 5px;
+}
+
+.spinner {
+  display: block;
+  margin: 5rem auto;
+}
+
+.nonfts-message {
+  font-size: 2rem;
+}
+
+.card-image {
+  height: 225px;
+  object-fit: contain;
+}
+
+.table-p {
+  white-space: nowrap; 
+  width: 300px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+}
+
+.table-url {
+  white-space: nowrap; 
+  width: 450px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ant-card-body {
+  padding: 0 24px 24px 24px !important;
+}
