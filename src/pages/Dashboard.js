@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
-import { Row, Typography, Spin, Input, Select  } from 'antd';
+import { Row, Typography, Spin, Button, Input, Select  } from 'antd';
+import UAuth from '@uauth/js';
 
 import NFTCard from '../components/NFTCard';
 import { COVALENT_APIKEY } from '../config';
+
+const ud = new UAuth({
+  clientID: "",
+  scope: 'openid email wallet',
+  redirectUri: "https://viewernfts.netlify.app/",
+})
 
 function Dashboard({ chains }) {
   const [type, setType] = useState("137");
   const [userNFTs, setUserNFTs] = useState([]);
   const [nftLoading, setNFTLoading] = useState(false);
   const [chainIconURL, setChainIconURL] = useState("");
+  const [userData, setUserData] = useState({});
+
+  const loginUD = async () => {
+		const user = await ud.loginWithPopup();
+    loadMyCollection(user.idToken.sub);
+    setUserData(user);
+	}
 
   const loadMyCollection = async address => {
     try{
@@ -69,6 +83,14 @@ function Dashboard({ chains }) {
        
       </Select>
       <Input.Search placeholder="Find NFTs by address" onSearch={onSearch} style={{ maxWidth: '600px' }} enterButton/>
+      {!userData?.idToken?.sub
+        ? <Button
+            type="primary"
+            onClick={loginUD}
+          >
+            Login Unstoppable Domain 
+          </Button>
+        : <span>{userData.idToken.sub}</span>}
       <br />
       <br />
       {nftLoading
