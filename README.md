@@ -10,6 +10,9 @@ Piano Maker NFT
 ### Public Repo
 https://github.com/webroyit/NFT-Viewer
 
+### Video Demo
+https://youtu.be/DjIKYrZ_C8o
+
 ### Person of contact
 roywebweb123@gmail.com
 
